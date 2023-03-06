@@ -10,6 +10,13 @@ export default function Home(): JSX.Element {
 
             <Button appearance="primary">Кнопка</Button>
             <Button appearance="ghost">Кнопка</Button>
+
+            <Button appearance="primary" arrow="right">
+                Кнопка
+            </Button>
+            <Button arrow="down" appearance="ghost">
+                Кнопка
+            </Button>
         </>
     );
 }
