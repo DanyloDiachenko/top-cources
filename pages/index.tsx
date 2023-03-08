@@ -4,8 +4,9 @@ import { Button } from "../components";
 import { P } from "../components";
 import { Tag } from "../components";
 import { Rating } from "../components";
+import { WithLayout } from "../layout/Layout";
 
-export default function Home(): JSX.Element {
+const Home = (): JSX.Element => {
     const [rating, setRating] = useState<number>(4);
 
     return (
@@ -69,4 +70,6 @@ export default function Home(): JSX.Element {
             <Rating rating={rating} isEditable setRating={setRating} />
         </>
     );
-}
+};
+
+export default WithLayout(Home);
