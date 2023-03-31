@@ -6,7 +6,7 @@ import {
 } from "next";
 import axios from "axios";
 import { WithLayout } from "../../layout/Layout";
-import { MenuItem } from "../../intarfaces/menu.interface";
+import { MenuItem } from "../../interfaces/menu.interface";
 import { firstLevelMenu } from "../../helpers/helpers";
 import { ParsedUrlQuery } from "querystring";
 

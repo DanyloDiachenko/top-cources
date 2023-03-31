@@ -1,5 +1,5 @@
-import { TopLevelCategory } from "../intarfaces/page.interface";
-import { FirstLevelMenuItem } from "../intarfaces/menu.interface";
+import { TopLevelCategory } from "../interfaces/page.interface";
+import { FirstLevelMenuItem } from "../interfaces/menu.interface";
 import CoursesIcon from "./icons/courses.svg";
 import ServicesIcon from "./icons/services.svg";
 import BooksIcon from "./icons/books.svg";
@@ -31,3 +31,9 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
         id: TopLevelCategory.Products,
     },
 ];
+
+export const priceRu = (price: number): string =>
+    price
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+        .concat(" ₽");

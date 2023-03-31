@@ -1,8 +1,8 @@
-import { TopLevelCategory, TopPageModel } from '../../intarfaces/page.interface';
-import { ProductModel } from '../../intarfaces/product.interface';
+import { TopLevelCategory, TopPageModel } from '../../interfaces/page.interface';
+import { ProductModel } from '../../interfaces/product.interface';
 
 export interface TopPageComponentProps {
-	products: ProductModel[];
-	page: TopPageModel;
 	firstCategory: TopLevelCategory;
+	page: TopPageModel;
+	products: ProductModel[];
 }

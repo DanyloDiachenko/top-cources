@@ -4,7 +4,7 @@ import { useContext } from "react";
 import cn from "classnames";
 import { AppContext } from "../../context/app.context";
 import styles from "./Menu.module.css";
-import { FirstLevelMenuItem, PageItem } from "../../intarfaces/menu.interface";
+import { FirstLevelMenuItem, PageItem } from "../../interfaces/menu.interface";
 import { firstLevelMenu } from "../../helpers/helpers";
 
 export const Menu = (): JSX.Element => {

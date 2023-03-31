@@ -3,7 +3,7 @@
 	grid-template-columns: auto 230px minmax(320px 1200px) auto;
 	grid-template-rows: auto 1fr auto;
 	min-height: 100vh;
-	gap: 0 30px;
+	gap: 40px 30px;
 	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 	grid-template-areas: 
 		". header header ."
@@ -43,5 +43,9 @@
 
 	.header {
 		display: block;
+	}
+
+	.body {
+		padding: 15px;
 	}
 }

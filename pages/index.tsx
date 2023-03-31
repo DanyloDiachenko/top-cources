@@ -7,7 +7,7 @@ import { P } from "../components";
 import { Tag } from "../components";
 import { Rating } from "../components";
 import { WithLayout } from "../layout/Layout";
-import { MenuItem } from "../intarfaces/menu.interface";
+import { MenuItem } from "../interfaces/menu.interface";
 
 const Home = ({ menu, firstCategory }: HomeProps): JSX.Element => {
     const [rating, setRating] = useState<number>(4);

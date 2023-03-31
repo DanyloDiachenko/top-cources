@@ -4,12 +4,12 @@ import axios from "axios";
 import { ParsedUrlQuery } from "querystring";
 import { WithLayout } from "../../layout/Layout";
 import { TopPageComponent } from "../../page-components";
-import { MenuItem } from "../../intarfaces/menu.interface";
+import { MenuItem } from "../../interfaces/menu.interface";
 import {
     TopLevelCategory,
     TopPageModel,
-} from "../../intarfaces/page.interface";
-import { ProductModel } from "../../intarfaces/product.interface";
+} from "../../interfaces/page.interface";
+import { ProductModel } from "../../interfaces/product.interface";
 import { firstLevelMenu } from "../../helpers/helpers";
 
 const TopPage = ({
