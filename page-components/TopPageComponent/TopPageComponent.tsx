@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-import { sortReducer } from "./Sort.reducer";
+import { sortReducer } from "./sort.reducer";
 import { Htag, Tag, HhData, Advantages, Sort } from "../../components";
 import { TopPageComponentProps } from "./TopPageComponent.props";
 import styles from "./TopPageComponent.module.css";
