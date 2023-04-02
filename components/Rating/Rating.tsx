@@ -31,6 +31,14 @@ export const Rating = ({
         setRating(i);
     };
 
+    const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
+        if (e.code != "Space" || !setRating) {
+            return;
+        }
+
+        setRating(i);
+    };
+
     const constuctRating = (currentRating: number): void => {
         const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
             return (
@@ -46,6 +54,9 @@ export const Rating = ({
                 >
                     <StarIconTs
                         tabIndex={isEditable ? 0 : -1}
+                        onKeyDown={(e: KeyboardEvent<SVGElement>) =>
+                            isEditable && handleSpace(i + 1, e)
+                        }
                     />
                 </span>
             );
