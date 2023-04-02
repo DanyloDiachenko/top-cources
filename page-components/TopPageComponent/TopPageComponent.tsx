@@ -6,6 +6,7 @@ import { TopPageComponentProps } from "./TopPageComponent.props";
 import styles from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "../../interfaces/page.interface";
 import { SortEnum } from "../../components/Sort/Sort.props";
+import { Product } from "../../components";
 
 export const TopPageComponent = ({
     page,
@@ -36,7 +37,7 @@ export const TopPageComponent = ({
             <div>
                 {products &&
                     products.map((product) => (
-                        <div key={product._id}>{product.title}</div>
+                        <Product key={product._id} product={product} />
                     ))}
             </div>
             <div className={styles.hhTitle}>
