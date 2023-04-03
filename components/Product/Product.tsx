@@ -10,6 +10,8 @@ import { Tag } from "../Tag/Tag";
 import { Button } from "../Button/Button";
 import { declOfNum, priceRu } from "../../helpers/helpers";
 import { Divider } from "../Divider/Divider";
+import { Review } from "../Review/Review";
+import { ReviewForm } from "../ReviewForm/ReviewForm";
 
 export const Product =
     /* forwardRef( */
@@ -153,23 +155,25 @@ export const Product =
                     variants={variants}
                     initial="hidden"
                 > */}
-                <Card
-                    color="blue"
-                    className={styles.reviews}
-                    /* ref={reviewRef} */
-                    tabIndex={isReviewOpened ? 0 : -1}
-                >
-                    {product.reviews.map((r) => (
-                        <div key={r._id}>
-                            {/* <Review review={r} />
-                                <Divider /> */}
-                        </div>
-                    ))}
-                    {/* <ReviewForm
+                {isReviewOpened && (
+                    <Card
+                        color="blue"
+                        className={styles.reviews}
+                        /* ref={reviewRef} */
+                        tabIndex={isReviewOpened ? 0 : -1}
+                    >
+                        {product.reviews.map((r) => (
+                            <div key={r._id}>
+                                <Review review={r} />
+                                <Divider />
+                            </div>
+                        ))}
+                        <ReviewForm
                             productId={product._id}
                             isOpened={isReviewOpened}
-                        /> */}
-                </Card>
+                        />
+                    </Card>
+                )}
                 {/*  </motion.div> */}
             </div>
         );
