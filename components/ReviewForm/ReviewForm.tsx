@@ -27,12 +27,11 @@ export const ReviewForm = ({
         reset,
         clearErrors,
     } = useForm<IReviewForm>();
-    /* const [isSuccess, setIsSuccess] = useState<boolean>(false);
-    const [error, setError] = useState<string>(); */
+    const [isSuccess, setIsSuccess] = useState<boolean>(false);
+    const [error, setError] = useState<string>();
 
-    const onSubmit = async (data: IReviewForm) => {
-        console.log(data);
-        /* try {
+    const onSubmit = async (formData: IReviewForm) => {
+        try {
             const { data } = await axios.post<IReviewSentResponse>(
                 API.review.createDemo,
                 { ...formData, productId }
@@ -47,7 +46,7 @@ export const ReviewForm = ({
             if (e instanceof Error) {
                 setError(e.message);
             }
-        } */
+        }
     };
 
     return (
@@ -126,29 +125,24 @@ export const ReviewForm = ({
                     </span>
                 </div>
             </div>
-            {
-                /* isSuccess */ true && (
-                    <div
-                        className={cn(styles.success, styles.panel)}
-                        role="alert"
-                    >
-                        <div className={styles.successTitle}>
-                            Ваш отзыв отправлен
-                        </div>
-                        <div>
-                            Спасибо, ваш отзыв будет опубликован после проверки.
-                        </div>
-                        <button
-                            /* onClick={() => setIsSuccess(false)} */
-                            className={styles.close}
-                            aria-label="Закрыть оповещение"
-                        >
-                            <CloseIcon />
-                        </button>
+            {isSuccess && (
+                <div className={cn(styles.success, styles.panel)} role="alert">
+                    <div className={styles.successTitle}>
+                        Ваш отзыв отправлен
                     </div>
-                )
-            }
-            {/* {error && (
+                    <div>
+                        Спасибо, ваш отзыв будет опубликован после проверки.
+                    </div>
+                    <button
+                        onClick={() => setIsSuccess(false)}
+                        className={styles.close}
+                        aria-label="Закрыть оповещение"
+                    >
+                        <CloseIcon />
+                    </button>
+                </div>
+            )}
+            {error && (
                 <div className={cn(styles.error, styles.panel)} role="alert">
                     Что-то пошло не так, попробуйте обновить страницу
                     <button
@@ -159,7 +153,7 @@ export const ReviewForm = ({
                         <CloseIcon />
                     </button>
                 </div>
-            )} */}
+            )}
         </form>
     );
 };

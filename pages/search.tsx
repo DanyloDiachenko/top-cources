@@ -1,5 +1,7 @@
 import { GetStaticProps } from "next";
 import axios from "axios";
+
+import { API } from "../helpers/api";
 import { WithLayout } from "../layout/Layout";
 import { MenuItem } from "../interfaces/menu.interface";
 
@@ -16,12 +18,9 @@ interface HomeProps extends Record<string, unknown> {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     const firstCategory: number = 0;
-    const { data: menu } = await axios.post<MenuItem[]>(
-        process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
-        {
-            firstCategory,
-        }
-    );
+    const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
+        firstCategory,
+    });
     return {
         props: {
             menu,

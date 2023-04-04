@@ -54,8 +54,9 @@
 	background: none;
 }
 
-.error .close path {
-	stroke: var(--red);
+.error .error-close path, 
+.error .error-close line {
+  stroke: var(--red);
 }
 
 @media screen and (max-width: 1100px) {

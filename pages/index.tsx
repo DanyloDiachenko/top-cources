@@ -1,6 +1,8 @@
 import { GetStaticProps, GetStaticPropsResult } from "next";
 import { useState } from "react";
 import axios from "axios";
+
+import { API } from "../helpers/api";
 import { Htag } from "../components";
 import { Button } from "../components";
 import { P } from "../components";
@@ -84,12 +86,9 @@ interface HomeProps extends Record<string, unknown> {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     const firstCategory: number = 0;
-    const { data: menu } = await axios.post<MenuItem[]>(
-        process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
-        {
-            firstCategory,
-        }
-    );
+    const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
+        firstCategory,
+    });
     return {
         props: {
             menu,
