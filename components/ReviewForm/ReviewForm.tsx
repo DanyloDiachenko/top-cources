@@ -1,12 +1,12 @@
-import axios from "axios";
-import { API } from "../../helpers/api";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import axios from "axios";
+import cn from "classnames";
 
+import { API } from "../../helpers/api";
 import { ReviewFormProps } from "./ReviewForm.props";
 import styles from "./ReviewForm.module.css";
 import CloseIcon from "./close.svg";
-import cn from "classnames";
 import { Input } from "../Input/Input";
 import { Rating } from "../Rating/Rating";
 import { Textarea } from "../Textarea/Textarea";
@@ -27,11 +27,12 @@ export const ReviewForm = ({
         reset,
         clearErrors,
     } = useForm<IReviewForm>();
-    const [isSuccess, setIsSuccess] = useState<boolean>(false);
-    const [error, setError] = useState<string>();
+    /* const [isSuccess, setIsSuccess] = useState<boolean>(false);
+    const [error, setError] = useState<string>(); */
 
-    const onSubmit = async (formData: IReviewForm) => {
-        try {
+    const onSubmit = async (data: IReviewForm) => {
+        console.log(data);
+        /* try {
             const { data } = await axios.post<IReviewSentResponse>(
                 API.review.createDemo,
                 { ...formData, productId }
@@ -46,7 +47,7 @@ export const ReviewForm = ({
             if (e instanceof Error) {
                 setError(e.message);
             }
-        }
+        } */
     };
 
     return (
@@ -91,7 +92,7 @@ export const ReviewForm = ({
                                 rating={field.value}
                                 ref={field.ref}
                                 setRating={field.onChange}
-                                /* error={errors.rating} */
+                                error={errors.rating}
                                 tabIndex={isOpened ? 0 : -1}
                             />
                         )}
@@ -125,24 +126,29 @@ export const ReviewForm = ({
                     </span>
                 </div>
             </div>
-            {isSuccess && (
-                <div className={cn(styles.success, styles.panel)} role="alert">
-                    <div className={styles.successTitle}>
-                        Ваш отзыв отправлен
-                    </div>
-                    <div>
-                        Спасибо, ваш отзыв будет опубликован после проверки.
-                    </div>
-                    <button
-                        onClick={() => setIsSuccess(false)}
-                        className={styles.close}
-                        aria-label="Закрыть оповещение"
+            {
+                /* isSuccess */ true && (
+                    <div
+                        className={cn(styles.success, styles.panel)}
+                        role="alert"
                     >
-                        <CloseIcon />
-                    </button>
-                </div>
-            )}
-            {error && (
+                        <div className={styles.successTitle}>
+                            Ваш отзыв отправлен
+                        </div>
+                        <div>
+                            Спасибо, ваш отзыв будет опубликован после проверки.
+                        </div>
+                        <button
+                            /* onClick={() => setIsSuccess(false)} */
+                            className={styles.close}
+                            aria-label="Закрыть оповещение"
+                        >
+                            <CloseIcon />
+                        </button>
+                    </div>
+                )
+            }
+            {/* {error && (
                 <div className={cn(styles.error, styles.panel)} role="alert">
                     Что-то пошло не так, попробуйте обновить страницу
                     <button
@@ -153,7 +159,7 @@ export const ReviewForm = ({
                         <CloseIcon />
                     </button>
                 </div>
-            )}
+            )} */}
         </form>
     );
 };
