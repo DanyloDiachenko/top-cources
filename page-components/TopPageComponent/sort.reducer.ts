@@ -6,7 +6,7 @@ export type SortActions = { type: SortEnum } | { type: SortEnum.Rating } | { typ
 export interface SortReducerState {
 	sort: SortEnum;
 	products: ProductModel[];
-}
+};
 
 export const sortReducer = (state: SortReducerState, action: SortActions): SortReducerState => {
 	switch (action.type) {
@@ -27,5 +27,5 @@ export const sortReducer = (state: SortReducerState, action: SortActions): SortR
 			};
 		default:
 			throw new Error('Неверный тип сортировки');
-	}
+	};
 };

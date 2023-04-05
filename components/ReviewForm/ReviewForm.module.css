@@ -1,7 +1,6 @@
 .reviewForm {
 	display: grid;
 	align-items: center;
-
 	font-size: 14px;
 	line-height: 24px;
 	grid-template-columns: [start] auto 1fr auto [end];
@@ -29,10 +28,8 @@
 
 .panel {
 	position: relative;
-
 	margin-top: 20px;
 	padding: 20px;
-
 	border-radius: 5px;
 }
 
@@ -52,7 +49,6 @@
 	position: absolute;
 	top: 20px;
 	right: 20px;
-
 	border: none;
 	background: none;
 }

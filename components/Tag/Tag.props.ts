@@ -5,4 +5,4 @@ export interface PProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>
 	children: ReactNode;
 	color?: 'ghost' | 'red' | 'grey' | 'green' | 'primary';
 	href?: string;
-}
+};

@@ -5,4 +5,4 @@ export interface TopPageComponentProps {
 	firstCategory: TopLevelCategory;
 	page: TopPageModel;
 	products: ProductModel[];
-}
+};

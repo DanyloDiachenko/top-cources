@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
 export const useScrollY = (): number => {
 	const isBrowser = typeof window !== 'undefined';
 
