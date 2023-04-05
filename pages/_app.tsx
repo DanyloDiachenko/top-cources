@@ -18,7 +18,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element => {
         <>
             <Head>
                 <title>MyTop - наш лучший топ</title>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/logo.svg" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link rel="preconnect" href="https://mc.yandex.ru" />
                 <link
