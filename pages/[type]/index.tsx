@@ -9,7 +9,9 @@ import { firstLevelMenu } from "../../helpers/helpers";
 import { API } from "../../helpers/api";
 
 function Type({ firstCategory }: TypeProps): JSX.Element {
-    return <>Type: {firstCategory}</>;
+    const categories = ["Курсы", "Сервисы", "Книги", "Продукты"];
+
+    return <>Категория: {categories[firstCategory]}</>;
 }
 
 export default withLayout(Type);
