@@ -14,16 +14,15 @@
 	cursor: pointer;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .ratingWrapper {
 	position: relative;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .errorMessage {
 	position: absolute;
 	bottom: -20px;
 	left: 0;
+
 	color: var(--red);
 }
 

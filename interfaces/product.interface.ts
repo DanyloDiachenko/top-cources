@@ -1,7 +1,7 @@
 export interface ProductCharacteristic {
 	value: string;
 	name: string;
-};
+}
 
 export interface ReviewModel {
 	_id: string;
@@ -10,7 +10,7 @@ export interface ReviewModel {
 	description: string;
 	rating: number;
 	createdAt: Date;
-};
+}
 
 export interface ProductModel {
 	_id: string;
@@ -31,6 +31,6 @@ export interface ProductModel {
 	reviews: ReviewModel[];
 	reviewCount: number;
 	reviewAvg?: number;
-	disadvantages?: string;
 	advantages?: string;
-};
+	disadvantages?: string;
+}

@@ -1,12 +1,15 @@
 .input {
 	padding: 7px 15px;
+
 	color: var(--black);
 	border: none;
 	border-radius: 5px;
 	outline-color: var(--primary);
 	background: var(--white);
 	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+
 	font-family: var(--font-family);
+
 	font-size: 16px;
 	line-height: 22px;
 }
@@ -19,15 +22,14 @@
 	border: 1px solid var(--red);
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .inputWrapper {
 	position: relative;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .errorMessage {
 	position: absolute;
 	bottom: -20px;
 	left: 0;
+
 	color: var(--red);
 }

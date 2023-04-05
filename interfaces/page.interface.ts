@@ -2,14 +2,14 @@ export enum TopLevelCategory {
 	Courses,
 	Services,
 	Books,
-	Products,
-};
+	Products
+}
 
 export interface TopPageAdvantage {
 	_id: string;
 	title: string;
 	description: string;
-};
+}
 
 export interface HhData {
 	_id: string;
@@ -17,8 +17,8 @@ export interface HhData {
 	juniorSalary: number;
 	middleSalary: number;
 	seniorSalary: number;
-	updateAt: Date;
-};
+	updatedAt: Date;
+}
 
 export interface TopPageModel {
 	tags: string[];
@@ -35,5 +35,7 @@ export interface TopPageModel {
 	advantages?: TopPageAdvantage[];
 	createdAt: Date;
 	updatedAt: Date;
-	hh: HhData;
-};
+	hh?: HhData;
+}
+
+

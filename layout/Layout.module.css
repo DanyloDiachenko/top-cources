@@ -1,19 +1,18 @@
 .wrapper {
 	display: grid;
-	grid-template-columns: 5% 230px auto 5%;
+	grid-template-columns: auto 230px minmax(320px, 1200px) auto;
 	grid-template-rows: auto 1fr auto;
+
 	min-height: 100vh;
 	gap: 40px 30px;
-	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
-	grid-template-areas: 
+	grid-template-areas:
 		". header header ."
 		". sidebar body ."
-		"footer footer footer footer"
+		"footer footer footer footer";
 }
 
 .header {
 	grid-area: header;
-	display: none;
 }
 
 .sidebar {
@@ -22,33 +21,44 @@
 
 .body {
 	grid-area: body;
+
+	outline: none;
 }
 
 .footer {
 	grid-area: footer;
 }
 
-@media(max-width: 970px) {
-	.wrapper {
-		grid-template-columns: 2% 230px auto 2%;
-	}
+.skipLink {
+	position: fixed;
+	top: 0;
+	left: 100px;
+
+	display: block;
+	overflow: hidden;
+
+	height: 0;
+
+	color: var(--white);
+	background: var(--primary);
 }
 
-@media(max-width: 900px) {
+.displayed {
+	height: auto;
+}
+
+@media (max-width: 765px) {
 	.wrapper {
-		grid-template-columns: auto;
-		grid-template-areas: 
+		grid-template-columns: minmax(320px, 1fr);
+		grid-template-areas:
 			"header"
 			"body"
-			"footer"
+			"footer";
+		gap: 10px;
 	}
 
 	.sidebar {
-		display: none;
-	}
-
-	.header {
-		display: block;
+		display: none !important;
 	}
 
 	.body {

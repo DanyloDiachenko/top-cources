@@ -22,8 +22,8 @@
     "incremental": true
   },
   "include": [
-    "next-env.d.ts",
-    "svg.d.ts",
+    "next-env-custom.d.ts",
+    "images.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ],

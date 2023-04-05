@@ -5,7 +5,7 @@ export interface PageItem {
 	title: string;
 	_id: string;
 	category: string;
-};
+}
 
 export interface MenuItem {
 	_id: {
@@ -13,7 +13,7 @@ export interface MenuItem {
 	};
 	isOpened?: boolean;
 	pages: PageItem[];
-};
+}
 
 export interface FirstLevelMenuItem {
 	route: string;
