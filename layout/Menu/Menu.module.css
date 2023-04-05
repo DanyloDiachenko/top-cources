@@ -51,22 +51,6 @@
 	list-style: none;
 }
 
-/* test */
-
-.secondLevelBlock {
-	display: none;
-}
-
-.secondLevelBlockOpened {
-	display: block;
-}
-
-.secondLevelBlockOpened:last-child {
-	margin-bottom: 20px;
-}
-
-/* test */
-
 .thirdLevel {
 	display: block;
 	margin-bottom: 10px;

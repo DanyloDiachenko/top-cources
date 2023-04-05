@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 
 import { sortReducer } from "./sort.reducer";
 import { Htag, Tag, HhData, Advantages, Sort } from "../../components";
@@ -22,13 +22,17 @@ export const TopPageComponent = ({
         dispatchSort({ type: sort });
     };
 
+    useEffect(() => {
+        dispatchSort({ type: "reset", initialState: products });
+    }, [products]);
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.title}>
                 {page && page.title ? <Htag tag="h1">{page.title}</Htag> : ""}
 
                 {products && (
-                    <Tag color="gray" size="m">
+                    <Tag className={styles.tag} color="gray" size="m">
                         {products.length}
                     </Tag>
                 )}
@@ -37,7 +41,7 @@ export const TopPageComponent = ({
             <div>
                 {products &&
                     products.map((product) => (
-                        <Product key={product._id} product={product} />
+                        <Product layout key={product._id} product={product} />
                     ))}
             </div>
             <div className={styles.hhTitle}>
