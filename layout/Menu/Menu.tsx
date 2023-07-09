@@ -62,17 +62,15 @@ export const Menu = (): JSX.Element => {
                 {firstLevelMenu.map((m) => (
                     <li key={m.route} aria-expanded={m.id == firstCategory}>
                         <Link href={`/${m.route}`}>
-                            <a>
-                                <div
-                                    className={cn(styles.firstLevel, {
-                                        [styles.firstLevelActive]:
-                                            m.id == firstCategory,
-                                    })}
-                                >
-                                    {m.icon}
-                                    <span>{m.name}</span>
-                                </div>
-                            </a>
+                            <div
+                                className={cn(styles.firstLevel, {
+                                    [styles.firstLevelActive]:
+                                        m.id == firstCategory,
+                                })}
+                            >
+                                {m.icon}
+                                <span>{m.name}</span>
+                            </div>
                         </Link>
                         {m.id == firstCategory && buildSecondLevel(m)}
                     </li>
@@ -136,21 +134,18 @@ export const Menu = (): JSX.Element => {
     ) => {
         return pages.map((p) => (
             <motion.li key={p._id} variants={variantsChildren}>
-                <Link href={`/${route}/${p.alias}`}>
-                    <a
-                        tabIndex={isOpened ? 0 : -1}
-                        className={cn(styles.thirdLevel, {
-                            [styles.thirdLevelActive]:
-                                `/${route}/${p.alias}` == router.asPath,
-                        })}
-                        aria-current={
-                            `/${route}/${p.alias}` == router.asPath
-                                ? "page"
-                                : false
-                        }
-                    >
-                        {p.category}
-                    </a>
+                <Link
+                    href={`/${route}/${p.alias}`}
+                    tabIndex={isOpened ? 0 : -1}
+                    className={cn(styles.thirdLevel, {
+                        [styles.thirdLevelActive]:
+                            `/${route}/${p.alias}` == router.asPath,
+                    })}
+                    aria-current={
+                        `/${route}/${p.alias}` == router.asPath ? "page" : false
+                    }
+                >
+                    {p.category}
                 </Link>
             </motion.li>
         ));

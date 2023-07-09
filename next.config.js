@@ -1,6 +1,6 @@
 module.exports = {
 	images: {
-		domains: ['courses-top.ru']
+		domains: ['courses-top.ru', 'cdn-bucket.hb.bizmrg.com', 'courses-top.ruhttp'],
 	},
 	webpack(config, options) {
 		config.module.rules.push({
