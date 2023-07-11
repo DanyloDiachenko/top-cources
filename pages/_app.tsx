@@ -23,6 +23,10 @@ const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element => {
                     content={process.env.NEXT_PUBLIC_DOMAIN + router.asPath}
                 />
                 <meta property="og:locale" content="ru_RU" />
+                <meta
+                    name="description"
+                    content="OwlTop / My Top - лучший агрегатор курсов, найдите нужные курсы и интересующую вас информацию о них за считанные минуты"
+                />
             </Head>
             <Component {...pageProps} />
         </>
