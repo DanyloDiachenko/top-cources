@@ -1,78 +1,86 @@
-.reviewForm {
-	display: grid;
-	align-items: center;
-	font-size: 14px;
-	line-height: 24px;
-	grid-template-columns: [start] auto 1fr auto [end];
-	gap: 20px 30px;
-}
+.form {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
 
-.description,
-.submit {
-	grid-column: start / end;
+    display: grid;
+    grid-template-columns: [start] auto 1fr auto [end];
+    gap: 20px 30px;
+    align-items: center;
 }
 
 .title {
-	justify-self: left;
+    justify-self: left;
+}
+
+.description, .submit {
+    grid-column: start / end;
 }
 
 .info {
-	margin-left: 15px;
+    margin-left: 15px;
 }
 
 .rating {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	gap: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
 }
 
 .panel {
-	position: relative;
-	margin-top: 20px;
-	padding: 20px;
-	border-radius: 5px;
+    position: relative;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: auto;
+    transition: all .4s;
 }
 
 .success {
-	background: var(--green-light);
+    background: var(--green-light);
 }
 
 .error {
-	background: var(--red-light);
-}
-
-.successTitle {
-	font-weight: bold;
-}
-
-.close {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	border: none;
-	background: none;
+    background: var(--red-light);
 }
 
 .error .close path {
-	stroke: var(--red);
+    stroke: var(--red);
 }
 
-@media screen and (max-width: 1100px) {
-	.reviewForm {
-		grid-template-columns: [start] 1fr 1fr [end];
-	}
-
-	.title {
-		justify-self: normal;
-	}
-
-	.rating {
-		grid-column: start / end;
-	}
+.successTitle {
+    font-weight: bold;
 }
 
-@media screen and (max-width: 640px) {
-	.reviewForm {
-		grid-template-columns: [start] 1fr [end];
-	}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform .5s;
+    background: transparent;
+    border: none;
+}
+
+.close:hover {
+    transform: scale(1.5);
+}
+
+@media (max-width: 1160px) {
+    .form {
+        grid-template-columns: [start] 1fr 1fr [end];
+    }
+
+    .rating {
+        grid-column: start / end;
+    }
+
+    .title {
+        justify-self: normal;
+    }
+}
+
+@media (max-width: 640px) {
+    .form {
+        grid-template-columns: [start] 1fr [end];
+    }
 }

@@ -1,17 +1,39 @@
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import React from "react";
+import { useRouter } from "next/router";
 import axios from "axios";
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
-
-import { MenuItem } from "../../interfaces/menu.interface";
-import { withLayout } from "../../layout/Layout";
 import { firstLevelMenu } from "../../helpers/helpers";
+import { MenuItem } from "../../interfaces/menu.interface";
+import { TopLevelCategory } from "../../interfaces/page.interface";
 import { API } from "../../helpers/api";
+import Link from "next/link";
+import Htag from "../../components/Htag/Htag";
+import { withLayout } from '../../layout/Layout';
 
-function Type({ firstCategory }: TypeProps): JSX.Element {
+const Type = ({ firstCategory, menu }: TypeProps): JSX.Element => {
     const categories = ["Курсы", "Сервисы", "Книги", "Продукты"];
 
-    return <>Категория: {categories[firstCategory]}</>;
+    const router = useRouter();
+
+    return (
+        <>
+            <Htag tag="h1">Категория: {categories[firstCategory]}</Htag>
+            {menu && menu.length && menu.map((menuItem, index) => (
+                <div key={index}>
+                    {menuItem && menuItem.pages.length && menuItem.pages.map((page) => (
+                        <Htag tag="h4">
+                            <Link
+                                href={router.asPath + "/" + page.alias}
+                                key={page._id}
+                            >
+                                {page.title}
+                            </Link>
+                        </Htag>
+                    ))}
+                </div>
+            ))}
+        </>
+    );
 }
 
 export default withLayout(Type);
@@ -26,13 +48,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<TypeProps> = async ({
     params,
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
-    if (!params) {
+    if (!params)
         return {
             notFound: true,
         };
-    }
     const firstCategoryItem = firstLevelMenu.find(
-        (m) => m.route == params.type
+        (m) => m.route === params.type
     );
     if (!firstCategoryItem) {
         return {
@@ -52,5 +73,5 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({
 
 interface TypeProps extends Record<string, unknown> {
     menu: MenuItem[];
-    firstCategory: number;
+    firstCategory: TopLevelCategory;
 }

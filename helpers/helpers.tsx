@@ -1,9 +1,9 @@
-import CoursesIcon from "./icons/courses.svg";
-import ServicesIcon from "./icons/services.svg";
-import BooksIcon from "./icons/books.svg";
-import ProductsIcon from "./icons/products.svg";
-import { TopLevelCategory } from "../interfaces/page.interface";
 import { FirstLevelMenuItem } from "../interfaces/menu.interface";
+import { TopLevelCategory } from "../interfaces/page.interface";
+import CoursesIcon from "../assets/img/courses.svg";
+import ServicesIcon from "../assets/img/services.svg";
+import BooksIcon from "../assets/img/books.svg";
+import ProductsIcon from "../assets/img/products.svg";
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
     {
@@ -26,17 +26,18 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
     },
     {
         route: "products",
-        name: "Продукты",
+        name: "Товары",
         icon: <ProductsIcon />,
         id: TopLevelCategory.Products,
     },
 ];
 
-export const priceRu = (price: number): string =>
-    price
+export const priceRu = (price: number): string => {
+    return price
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-        .concat(" ₽");
+        .concat(" ₴");
+};
 
 export const declOfNum = (
     number: number,

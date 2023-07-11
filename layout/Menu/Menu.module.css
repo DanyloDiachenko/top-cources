@@ -1,66 +1,70 @@
-.firstLevel {
-	display: grid;
-	align-items: center;
-	margin-top: 20px;
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 25px;
-	grid-template-columns: 24px 1fr;
-	gap: 20px;
+.menu {
+  padding: 0;
+  list-style: none;
 }
 
-.firstLevelList {
-	padding: 0;
-	list-style: none;
+.firstLevel {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 20px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  margin-top: 20px;
 }
 
 .firstLevelActive,
 .firstLevel:hover {
-	color: var(--primary);
+  color: var(--primary);
 }
 
 .firstLevelActive svg,
 .firstLevel:hover svg {
-	fill: var(--primary);
+  fill: var(--primary);
 }
 
 .secondLevel {
-	margin-bottom: 10px;
-	padding: 0;
-	cursor: pointer;
-	text-transform: uppercase;
-	color: var(--gray-dark);
-	border: none;
-	background: none;
-	font-size: 12px;
-	font-weight: 300;
+  border: none;
+  background: transparent;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--gray-dark);
+  font-weight: 300;
+  font-size: 12px;
+  padding: 0;
 }
 
 .secondBlock {
-	margin-top: 15px;
-	margin-left: 12px;
-	padding: 0 0 0 32px;
-	list-style: none;
-	border-left: 1px solid #DFDFDF;
+  margin-left: 12px;
+  margin-top: 15px;
+  padding-left: 32px;
+  border-left: 1px solid #dfdfdf;
 }
 
 .secondLevelBlock {
-	overflow: hidden;
-	padding: 0;
-	list-style: none;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
 }
 
 .thirdLevel {
-	display: block;
-	margin-bottom: 10px;
-	cursor: pointer;
-	color: var(--gray-dark);
-	outline-offset: -1px;
-	font-size: 14px;
-	font-weight: 500;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: var(--gray-dark);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+  overflow: hidden;
+  outline-offset: -1px;
 }
 
 .thirdLevelActive,
 .thirdLevel:hover {
-	color: var(--primary);
+  color: var(--primary);
 }

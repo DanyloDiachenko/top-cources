@@ -1,14 +1,13 @@
 import { GetStaticProps } from "next";
 import React from "react";
 import axios from "axios";
-
-import { withLayout } from "../layout/Layout";
 import { MenuItem } from "../interfaces/menu.interface";
 import { API } from "../helpers/api";
+import { withLayout } from "../layout/Layout";
 
 const Search = (): JSX.Element => {
     return <>Search</>;
-};
+}
 
 export default withLayout(Search);
 

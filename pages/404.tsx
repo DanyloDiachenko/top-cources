@@ -1,13 +1,17 @@
 import React from "react";
-
-import { Htag } from "../components";
 import { withLayout } from "../layout/Layout";
+import Htag from "../components/Htag/Htag";
+import Link from "next/link";
+import Button from "../components/Button/Button";
 
 const Error404 = (): JSX.Element => {
     return (
-        <>
-            <Htag tag="h1">Ошибка 404</Htag>
-        </>
+        <div className="errorWrapper">
+            <Htag tag="h1">По этому адресу ничего не найдено :(</Htag>
+            <Link href="/">
+                <Button appearance="primary">&larr; На главную</Button>
+            </Link>
+        </div>
     );
 };
 

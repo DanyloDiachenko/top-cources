@@ -1,14 +1,20 @@
 import React from "react";
-
-import { Htag } from "../components";
 import { withLayout } from "../layout/Layout";
+import Htag from "../components/Htag/Htag";
+import Link from "next/link";
+import Button from "../components/Button/Button";
 
 const Error500 = (): JSX.Element => {
     return (
-        <>
-            <Htag tag="h1">Ошибка 500</Htag>
-        </>
+        <div className="errorWrapper">
+            <Htag tag="h1">
+                Возникла ошибка на сервере, повторите попытку позже.
+            </Htag>
+            <Link href="/">
+                <Button appearance="primary">&larr; На главную</Button>
+            </Link>
+        </div>
     );
-};
+}
 
 export default withLayout(Error500);
