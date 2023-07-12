@@ -140,21 +140,18 @@ const Menu = (): JSX.Element => {
     ) => {
         return pages.map((p) => (
             <motion.li key={p._id} variants={variantsChildren}>
-                <Link href={`/${route}/${p.alias}`}>
-                    <a
-                        tabIndex={isOpened ? 0 : -1}
-                        className={cn(styles.thirdLevel, {
-                            [styles.thirdLevelActive]:
-                                `/${route}/${p.alias}` == router.asPath,
-                        })}
-                        aria-current={
-                            `/${route}/${p.alias}` == router.asPath
-                                ? "page"
-                                : false
-                        }
-                    >
-                        {p.category}
-                    </a>
+                <Link
+                    href={`/${route}/${p.alias}`}
+                    tabIndex={isOpened ? 0 : -1}
+                    className={cn(styles.thirdLevel, {
+                        [styles.thirdLevelActive]:
+                            `/${route}/${p.alias}` == router.asPath,
+                    })}
+                    aria-current={
+                        `/${route}/${p.alias}` == router.asPath ? "page" : false
+                    }
+                >
+                    {p.category}
                 </Link>
             </motion.li>
         ));

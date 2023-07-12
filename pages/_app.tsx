@@ -34,6 +34,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element => {
                     name="description"
                     content="OwlTop / My Top - лучший агрегатор курсов, найдите нужные курсы и интересующую вас информацию о них за считанные минуты"
                 />
+                <meta name="robots" content="all" />
             </Head>
             <>
                 <style jsx global>{`
