@@ -1,6 +1,7 @@
 import { AppProps } from "next/dist/shared/lib/router/router";
 import Head from "next/head";
 import "../styles/globals.css";
+import {}
 
 const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element => {
     return (
