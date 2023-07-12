@@ -59,7 +59,7 @@ const TopPageComponent = ({
             <div className={styles.hhTitle}>
                 <Htag tag="h2">Вакансии - {page.category}</Htag>
                 <Tag color="red" size="m">
-                    hh.ru
+                    dou.ua
                 </Tag>
             </div>
             {firstCategory == TopLevelCategory.Courses && page.hh && (
