@@ -1,7 +1,7 @@
 import { AppProps } from "next/dist/shared/lib/router/router";
 import Head from "next/head";
 import "../styles/globals.css";
-import { Noto_Sans } from "@next/font/google";
+import { Noto_Sans } from "next/font/google";
 
 const notoSans = Noto_Sans({
     subsets: ["cyrillic", "latin"],
