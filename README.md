@@ -2,7 +2,7 @@ stage: production ready
 
 link: https://top-cources.vercel.app/
 
-# Starbucks Coffee Shop Online
+# Top Cources
 ### Stack:
 -  next  (ver. 13.2.4)
 - typeScript (ver. 4.8.2)
