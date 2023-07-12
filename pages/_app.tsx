@@ -1,7 +1,13 @@
 import { AppProps } from "next/dist/shared/lib/router/router";
 import Head from "next/head";
 import "../styles/globals.css";
-import {}
+import { Noto_Sans } from "@next/font/google";
+
+const notoSans = Noto_Sans({
+    subsets: ["cyrillic", "latin"],
+    weight: ["300", "400", "500", "600", "700"],
+    display: "swap",
+});
 
 const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element => {
     return (
@@ -28,6 +34,11 @@ const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element => {
                     name="description"
                     content="OwlTop / My Top - лучший агрегатор курсов, найдите нужные курсы и интересующую вас информацию о них за считанные минуты"
                 />
+                <style jsx global>{`
+                    html {
+                        font-family: ${notoSans.style.fontFamily};
+                    }
+                `}</style>
             </Head>
             <Component {...pageProps} />
         </>
