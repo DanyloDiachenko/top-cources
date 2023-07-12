@@ -34,13 +34,15 @@ const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element => {
                     name="description"
                     content="OwlTop / My Top - лучший агрегатор курсов, найдите нужные курсы и интересующую вас информацию о них за считанные минуты"
                 />
+            </Head>
+            <>
                 <style jsx global>{`
                     html {
                         font-family: ${notoSans.style.fontFamily};
                     }
                 `}</style>
-            </Head>
-            <Component {...pageProps} />
+                <Component {...pageProps} />
+            </>
         </>
     );
 };
