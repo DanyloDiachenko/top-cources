@@ -26,7 +26,6 @@
   transition: opacity .4s;
   border: none;
   background: transparent;
-  font-family: var(--font-family);
 }
 
 .sortButton:hover {
